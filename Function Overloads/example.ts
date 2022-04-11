@@ -17,3 +17,9 @@ function fn (b: string): number // signature is not compatible
 function fn (c: number): number {
   return c
 }
+
+function len (a: string): number
+function len (a: any[]): number
+function len (c: any): number {
+  return c.length
+}

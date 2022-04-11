@@ -14,6 +14,7 @@ var Store = /** @class */ (function () {
     };
     return Store;
 }());
+
 /**
  * FashionProduct Class
  */
@@ -28,8 +29,10 @@ var FashionProduct = /** @class */ (function () {
     };
     return FashionProduct;
 }());
+
 // create new store
 var storeOne = new Store('Example Store', 190000);
+
 // new fashion product
 var fashionOne = new FashionProduct(storeOne, 'Shirt', 28000);
 fashionOne.sell();
