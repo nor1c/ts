@@ -1,3 +1,15 @@
+type Point = { x: number, y: number }
+type P = keyof Point
+const p: P = 'x' // 'x' | 'y'
+
+//
+type Arrayish = { [n: number]: unknown }
+type aIsh = keyof Arrayish // type aIsh = number
+
+type Mapish = { [k: string]: boolean }
+type mIsh = keyof Mapish // type mIsh = string | number
+
+// 
 interface User {
   name: string
   age: number
