@@ -48,3 +48,17 @@ console.log(person.name) // output: John (never set to Dex because it is not in 
 
 person.name = 'Mark'
 console.log(person.name) // output: Mark
+
+// example 2
+function unwritable () {
+  return {
+    writable: false
+  }
+}
+
+class Person2 {
+  @unwritable
+  name: string = 'John'
+}
+const person2 = new Person2()
+person2.name = 'Mark' // output: TypeError: Cannot assign to read only property 'name' of object '#<Person2>'

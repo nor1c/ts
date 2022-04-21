@@ -55,3 +55,30 @@ Person.deprecatedStaticMethod()
     (warning) Method deprecatedMethod is deprecated with reason: Use another instance method
     inside deprecated instance method, instanceMember = hello
  */
+
+
+// example 2
+function log (logIt: boolean = true) {
+  return (target: any, memberName: string, descriptor: PropertyDescriptor) => {
+    const originalMethod = descriptor.value
+
+    descriptor.value = (...args: any[]) => { // scope here is basically change the code inside original method in class Printer
+      console.log(...args) // 'Ahmad', 'Fauzi'
+      console.log(args) // ['John', 'Doe']
+
+      logIt && console.log('log: start') // will print if logIt is true
+      originalMethod(...args) // calling code inside the original method which is: console.log(`${firstName} ${lastName}`)
+      logIt && console.log('log: end') // will print if logIt is true
+    }
+  }
+}
+
+class Printer {
+  @log()
+  printName (firstName: string, lastName: string) {
+    console.log(`${firstName} ${lastName}`)
+  }
+}
+
+const printer = new Printer()
+printer.printName('John', 'Doe')
