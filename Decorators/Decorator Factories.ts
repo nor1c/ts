@@ -1,4 +1,7 @@
-// passing parameter(s) to the decorator
+/**
+ * Passing parameter(s) to the decorator function
+ */
+
 function sealed (isSealed: boolean) {
   console.log(isSealed) // output: true
 

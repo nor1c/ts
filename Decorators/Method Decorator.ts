@@ -1,3 +1,11 @@
+/**
+ * Decorators used in an method receives the following parameters: 
+   - For static properties, the constructor function of the class, for all other properties, the prototype of the class.
+   - The name of the member.
+
+ * @params target: Function | Object, memberName: string
+ */
+
 const deprecated = (deprecatedReason: string) => {
   return (target: any, memberName: string, descriptor: PropertyDescriptor) => {
     return {

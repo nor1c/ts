@@ -1,3 +1,12 @@
+/**
+ * The decorator function used with parameters receives the following parameters:
+   - For static properties, the constructor function of the class. For all other properties, the prototype of the class.
+   - The name of the member.
+   - The index of the parameter in the method’s parameter list.
+
+ * @params target: Function | Object, memberName: string, parameterIndex: number
+ */
+
 function print (target: Object, propertyKey: string, parameterIndex: number) {
   console.log(`Decorating param ${parameterIndex} in ${propertyKey}`)
 }

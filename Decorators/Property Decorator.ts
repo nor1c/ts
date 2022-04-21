@@ -1,3 +1,11 @@
+/**
+ * Any property decorator receives the following parameters:
+   - For static properties, the constructor function of the class. For all the other properties, the prototype of the class.
+   - The name of the member.
+
+  * @params target: Function | Object, memberName: string
+ */
+
 // decorator in class property
 function memberName (target: Function, memberName: string) {
   console.log(memberName) // output: "name"

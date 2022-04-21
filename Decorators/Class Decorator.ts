@@ -1,3 +1,10 @@
+/**
+ * Your decorator function will receive a single parameter, the 'target', which will be of type 'Function'. 
+ * This will be the constructor of the class that the decorator was applied to.
+ * 
+ * @param target: Function
+ */
+
 function sealed () {
   console.log('sealed() factory evaluated')
 }
