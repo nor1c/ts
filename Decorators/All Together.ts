@@ -32,7 +32,7 @@ function paramDec (target: any, memberName: string, propIndex: number) {
   console.log(propIndex) // 0
 }
 
-function proDec (target: any, memberName: string) {
+function propDec (target: any, memberName: string) {
   console.log(target) // object
   console.log(target.prototype) // undefined
   console.log(memberName) // id
