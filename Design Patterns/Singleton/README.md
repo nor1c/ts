@@ -1,4 +1,4 @@
-Basically it's uses the same class instance on different class objects
+Basically it uses the same class instance on different class objects
 
 <br>
 Commonly used:
