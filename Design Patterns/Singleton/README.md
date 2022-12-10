@@ -17,7 +17,10 @@ With singleton:
 ```ts
 class Animal() {
   ..getInstance() {
-    ..
+    if (!Animal.instance) {
+      Animal.instance = new Animal()
+    }
+    return Animal.instance
   }
 }
 const horse = Animal.getInstance() // created a new instance, since there's no instance created before
