@@ -94,6 +94,24 @@ function printObjek<T extends Printable>(obj: T) {
 }
 ```
 
+#### > `keyof typeof`
+
+Mendapatkan tipe union dari keys dari tipe hasil dari ekspresi yang dievaluasi pada saat runtime
+
+Contoh:
+```ts
+type TUser = {
+    name: string
+    age: number
+}
+
+type User = keyof typeof TUser // string | number | symbol
+
+const user: User = 'true' // ok
+const user: User = true // false
+const user: User = 123 // ok
+```
+
 <hr>
 
 ### Learning Resources
