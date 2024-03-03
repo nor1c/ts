@@ -98,7 +98,7 @@ function printObjek<T extends Printable>(obj: T) {
 
 Mendapatkan tipe union dari keys dari tipe hasil dari ekspresi yang dievaluasi pada saat runtime
 
-Contoh:
+Contoh 1:
 ```ts
 type TUser = {
     name: string
@@ -110,6 +110,18 @@ type User = keyof typeof TUser // string | number | symbol
 const user: User = 'true' // ok
 const user: User = true // false
 const user: User = 123 // ok
+```
+
+Contoh 2:
+```ts
+const myUser = {
+  name: 'Jack',
+  age: 26
+}
+
+type KTUser = keyof typeof myUser // "name" | "age"
+
+const ktuser: KTUser = "name" // can only accept "name" or "age"
 ```
 
 <hr>
